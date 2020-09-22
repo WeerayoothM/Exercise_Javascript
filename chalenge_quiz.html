@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  //   function mobileNum(num) {
+  //     return (
+  //       "(" +
+  //       num.slice(0, 3).join("") +
+  //       ") " +
+  //       num.slice(3, 6).join("") +
+  //       "-" +
+  //       num.slice(6, 10).join("")
+  //     );
+  //   }
+  //   alert(mobileNum([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]));
+  //   function mobileNum(num) {
+  //     return (
+  //       "(" +
+  //       num.slice(0, 3).join("") +
+  //       ") " +
+  //       num.slice(3, 6).join("") +
+  //       "-" +
+  //       num.slice(6, 10).join("")
+  //     );
+  //   }
+  //   alert(mobileNum([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]));
+
+  //   const isAllCharacters = (input) => {
+  //     const allCharacters = "abcdefghijklmnopqrstuvwxyz";
+
+  //     for (char of allCharacters) {
+  //       let isThere = input.trim().toLowerCase().indexOf(char);
+  //       if (isThere === -1) return false;
+  //     }
+  //     return true;
+  //   };
+
+  // function checkCharacters(Sentence) {
+  //   allChar = "abcdefghijklmnopqrstuvwxyz";
+  //   let charArray = Sentence.toLowerCase().split("");
+  //   for (char of allChar) {
+  //     if (!charArray.includes(char)) {
+  //       return false;
+  //     }
+  //   }
+  //   return true;
+  // }
+  // console.log(checkCharacters("The quick brown fox jumps over the lazy dog"));
+  // console.log(checkCharacters("This is not a pangram."));
+  console.log(new Date());
+  const isWorking = (today, deadline) => {
+    ![0, 6].includes(today.getDay()) ||
+      new Date(today.setDate(today.getDate() + 1)).getDate() ===
+        new Date(deadline).getDate();
+  };
+
+  console.log(isWorking(new Date(), "03/08/2020")); // true
+</script>

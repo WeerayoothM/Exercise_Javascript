@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      /* ======== Preloader ======== */
+      $(window).load(function () {
+        var preloaderDelay = 350,
+          preloaderFadeOutTime = 800;
+        alert("warn");
+
+        function hidePreloader() {
+          var loadingAnimation = $("#loading-animation"),
+            preloader = $("#preloader");
+          loadingAnimation.fadeOut();
+          alert("warn");
+          preloader.delay(preloaderDelay).fadeOut(preloaderFadeOutTime);
+        }
+        alert("warn");
+        hidePreloader();
+        alert("warn");
+      });
+    </script>
+    <style>
+      #preloader {
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+        position: fixed;
+        background-color: #fff;
+      }
+
+      #loading-animation {
+        top: 30%;
+        left: 30%;
+        width: 400px;
+        height: 400px;
+        position: absolute;
+        margin: -100px 0 0 -100px;
+        background: url("./9OHM\ \(2\).gif") center center no-repeat;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="preloader">
+      <div id="loading-animation">&nbsp;</div>
+    </div>
+
+    <h1>sodpjsdpjs</h1>
+  </body>
+</html>
