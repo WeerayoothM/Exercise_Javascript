@@ -180,5 +180,41 @@
 // }
 // let accumulator = new Accumulator(5);
 
-let firstName = "Weerayooth";
-console.log(firstName);
+// const bmiO = calBmi(1.75, 55);
+// console.log(bmiO);
+
+// function calBmi(h, w) {
+//   return h / w / w;
+// }
+
+// function for calculate TAX
+let calTax = (income) => {
+  let tax = 0;
+  // if (income <= 150000) {
+  //   tax = 0 * income;
+  // }
+  if (income > 150000) {
+    if (income >= 300000) tax += (5 / 100) * (300000 - 150000);
+    else tax += (5 / 100) * (income - 150000);
+  }
+  if (income > 300000) {
+    if (income >= 500000) tax += (10 / 100) * (500000 - 300000);
+    else tax += (10 / 100) * (income - 300000);
+  }
+  if (income > 500000) {
+    tax += (15 / 100) * (income - 500000);
+  }
+  return tax;
+};
+// const income = +prompt("Enter your income");
+//console.log(income);
+console.log(calTax(1000000));
+console.log(calTax(475000));
+console.log(calTax(298564));
+console.log(calTax(400000));
+console.log(calTax(360000));
+
+console.log(calTax(138900));
+console.log(calTax(300000));
+console.log(calTax(200000));
+console.log(calTax(500000));
