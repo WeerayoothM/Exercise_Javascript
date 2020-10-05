@@ -10,20 +10,19 @@
 </html>
 
 <script>
+  const gcd = (a, b) => {
+    if (!b) return a;
+    return gcd(b, a % b);
+  };
   let a = +prompt();
   let b = +prompt();
-  if (a % b !== 0 && b % a !== 0) {
+  let gcdNums = gcd(a, b);
+  if (gcdNums === 1) {
     alert(a + "/" + b);
   } else {
-    if (a > b) {
-      divider = b;
-      a = a / divider;
-      b = b / divider;
-    } else {
-      divider = a;
-      a = a / divider;
-      b = b / divider;
-    }
+    a = a / gcdNums;
+    b = b / gcdNums;
     alert(a + "/" + b);
   }
+  // gcd(a, b)===1
 </script>
