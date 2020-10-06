@@ -7,10 +7,39 @@
   </head>
   <body>
     <script>
-      const gcd = (a, b) => {
-        if (!b) return a;
-        return gcd(b, a % b);
+      const checkPrime = (num) => {
+        if (num <= 1) return false;
+        if (num === 2) return true;
+        for (let i = 2; i < num; i++) {
+          if (num % i === 0) return false;
+        }
+        return true;
       };
+      const findPrime = (list) => {
+        let primeNum = [];
+        for (let i = 2; i <= Math.min(...list); i++) {
+          if (checkPrime(i)) primeNum.push(i);
+        }
+        return primeNum;
+      };
+      let numList = [6, 8, 16];
+      const primeNums = findPrime(numList);
+      let factor = 1;
+      for (primeNum of primeNums) {
+        // want to find gcd
+        let isDivisible = true;
+        while (isDivisible) {
+          let isDivisible = true;
+          for (num of numList) {
+            if (num % primeNum !== 0) isDivisible = false;
+          }
+          if (!isDivisible) break;
+          numList = numList.map((item) => item / primeNum);
+          factor *= primeNum;
+        }
+      }
+      console.log(numList);
+      console.log(factor);
     </script>
   </body>
 </html>
