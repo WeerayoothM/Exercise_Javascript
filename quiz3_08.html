@@ -7,7 +7,25 @@
   </head>
   <body>
     <script>
-      //
+      function findLCM(numList){
+          let maxNum = Math.max(...numList);
+          let lcm = maxNum
+          while(true){
+            let foundLCM = true;
+            for (let num of numList){
+              
+              if (lcm % num !== 0){
+                  foundLCM = false
+                  lcm += maxNum
+                  break
+              }
+            }
+            if (foundLCM) break
+          }
+          return lcm;
+      }
+      console.log(findLCM([ 5,3,25 ]));
+
     </script>
   </body>
 </html>
