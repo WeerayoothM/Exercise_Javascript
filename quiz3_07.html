@@ -22,24 +22,25 @@
         }
         return primeNum;
       };
-      let numList = [6, 8, 16];
-      const primeNums = findPrime(numList);
-      let factor = 1;
-      for (primeNum of primeNums) {
-        // want to find gcd
-        let isDivisible = true;
-        while (isDivisible) {
-          let isDivisible = true;
-          for (num of numList) {
-            if (num % primeNum !== 0) isDivisible = false;
+      function findGCD(numList){
+          const primeNums = findPrime(numList);
+          let gcd = 1;
+          for (primeNum of primeNums) {
+            // want to find gcd
+            let isDivisible = true;
+            while (isDivisible) {
+              let isDivisible = true;
+              for (num of numList) {
+                if (num % primeNum !== 0) isDivisible = false;
+              }
+              if (!isDivisible) break;
+              numList = numList.map((item) => item / primeNum);
+              gcd *= primeNum;
+            }
           }
-          if (!isDivisible) break;
-          numList = numList.map((item) => item / primeNum);
-          factor *= primeNum;
-        }
+          return gcd
       }
-      console.log(numList);
-      console.log(factor);
+      console.log(findGCD([ 16,2048,256,1024 ]));
     </script>
   </body>
 </html>
